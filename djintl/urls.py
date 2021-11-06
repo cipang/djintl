@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls.i18n import i18n_patterns
-from mainapp.views import main_view, random_view
+from mainapp.views import main_view, random_view, page1_view
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("page1.html", page1_view, name="page1")
 ]
 
 urlpatterns += i18n_patterns(
