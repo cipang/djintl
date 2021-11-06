@@ -1,0 +1,22 @@
+<!DOCTYPE html>{% load i18n %}
+<html lang="{{ LANGUAGE_CODE }}">
+{% translate "Homepage" as title %}
+{% translate "English" as eng %}
+{% translate "Chinese" as chi %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ title }}</title>
+</head>
+<body>
+	<p>{% blocktranslate %}The following is the output:{% endblocktranslate %}</p>
+	<p>{{ s }}</p>
+	{% url 'random' as rurl %}
+	<p>{% blocktranslate %}<a href="{{ rurl }}">View some numbers</a>{% endblocktranslate %}</p>
+    <p>
+        {% language 'zh' %}<a href="{% url 'home' %}">{{ chi }}</a>{% endlanguage %} |
+        {% language 'en' %}<a href="{% url 'home' %}">{{ eng }}</a>{% endlanguage %}
+    </p>
+</body>
+<!-- Request: {{ request }} -->
+</html>
