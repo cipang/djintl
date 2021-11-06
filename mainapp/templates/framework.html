@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ page_title }}</title>
+    <title>{{ request.page_info.page_title }}</title>
 </head>
-<body>
-    <h1>{{ page_title }}</h1>
+<body id="{{ request.page_info.page_id }}">
+    <h1>{{ request.page_info.page_title }}</h1>
     <p>{{ content }}</p>
     <hr>
-    <p style="text-align: center">Page ID: {{ page_id }}</p>
+    <p style="text-align: center">Page ID: {{ request.page_info.page_id }}</p>
 </body>
 </html>

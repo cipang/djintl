@@ -20,4 +20,5 @@ def random_view(request):
 
 @page_info(page_id="p1", page_title="Page 1 Title")
 def page1_view(request):
-	return TemplateResponse(request, "framework.html", {"content": "This is page 1."})
+	print(f"{request.page_info=}")
+	return render(request, "framework.html", {"content": "This is page 1."})
